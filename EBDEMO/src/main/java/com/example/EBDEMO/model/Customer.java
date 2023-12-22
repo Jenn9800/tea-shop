@@ -18,7 +18,7 @@ public class Customer {
 
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
-    private Integer CustomerID;
+    private Long CustomerID;
     
     @Column(name = "CName")
     private String CName;
@@ -48,7 +48,7 @@ public class Customer {
 		this.CPhoneNum = cPhoneNum;
 	}
     
-    public void setCustomerID(Integer customerID) {
+    public void setCustomerID(Long customerID) {
 		this.CustomerID = customerID;
 	}
     
@@ -65,7 +65,7 @@ public class Customer {
     public String getcPhoneNum() {
 		return CPhoneNum;
 	}
-    public Integer getCustomerID() {
+    public Long getCustomerID() {
 		return CustomerID;
 	}
     public Date getLastPurchaseDate() {

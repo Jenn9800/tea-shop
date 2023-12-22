@@ -1,0 +1,1077 @@
+{
+	"info": {
+		"_postman_id": "42fb2732-55b8-4d37-925b-c15a612dd6f2",
+		"name": "EBFinal",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31912216"
+	},
+	"item": [
+		{
+			"name": "Customer",
+			"item": [
+				{
+					"name": "addCustomer",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "CName",
+									"value": "\"test2\"",
+									"type": "text"
+								},
+								{
+									"key": "Address",
+									"value": "\"12333 Main St\"",
+									"type": "text"
+								},
+								{
+									"key": "CPhoneNum",
+									"value": "\"123444490\"",
+									"type": "text"
+								},
+								{
+									"key": "LastPurchaseDate",
+									"value": "2023-01-01",
+									"type": "text"
+								},
+								{
+									"key": "CustomerID",
+									"value": "2",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/customer/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"customer",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "QueryCustomer",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/demo/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"demo",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getCustomer",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/tea/get/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"tea",
+								"get",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateCustomer",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "CName",
+									"value": "\"test2q\"",
+									"type": "text"
+								},
+								{
+									"key": "CAddressme",
+									"value": "\"12333 that St\"",
+									"type": "text"
+								},
+								{
+									"key": "CPhoneNum",
+									"value": "\"1234444\"",
+									"type": "text"
+								},
+								{
+									"key": "LastPurchaseDate",
+									"value": "2023-12-23",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/customer/update/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"customer",
+								"update",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteCustomer",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/customer/delete/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"customer",
+								"delete",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Tea",
+			"item": [
+				{
+					"name": "addTea",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "TeaName",
+									"value": "\"teaB\"",
+									"type": "text"
+								},
+								{
+									"key": "UnitPrice",
+									"value": "120.22",
+									"type": "text"
+								},
+								{
+									"key": "TeaSpan",
+									"value": "10123",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/tea/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"tea",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "QueryTea",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/tea/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"tea",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateTea",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "TeaName",
+									"value": "\"teaBB\"",
+									"type": "text"
+								},
+								{
+									"key": "UnitPrice",
+									"value": "12",
+									"type": "text"
+								},
+								{
+									"key": "TeaSpan",
+									"value": "101",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/tea/update/12",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"tea",
+								"update",
+								"12"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteTea",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/tea/delete/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"tea",
+								"delete",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getTea",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/tea/get/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"tea",
+								"get",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Order",
+			"item": [
+				{
+					"name": "QueryOrder",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/orders/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"orders",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addOrder",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "customerid",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "teaid",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "odate",
+									"value": "2023-12-22 14:35:39",
+									"type": "text"
+								},
+								{
+									"key": "oquantity",
+									"value": "50",
+									"type": "text"
+								},
+								{
+									"key": "oamount",
+									"value": "9.9",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/orders/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"orders",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getOrder",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/orders/get/11",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"orders",
+								"get",
+								"11"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateOrder",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "teaid",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "oquantity",
+									"value": "20",
+									"type": "text"
+								},
+								{
+									"key": "oamount",
+									"value": "22.11",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/orders/update/11",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"orders",
+								"update",
+								"11"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteOrder",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/orders/delete/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"orders",
+								"delete",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Inventory",
+			"item": [
+				{
+					"name": "addInventory",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "teaid",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "InvDate",
+									"value": "2023-12-23 14:35:39",
+									"type": "text"
+								},
+								{
+									"key": "InvQuantity",
+									"value": "1000.00",
+									"type": "text"
+								},
+								{
+									"key": "InvAmount",
+									"value": "449.15",
+									"type": "text"
+								},
+								{
+									"key": "InvPrice",
+									"value": "516.43",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/inventory/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"inventory",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "QueryInventory",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/inventory/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"inventory",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getInventory",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/inventory/get/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"inventory",
+								"get",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteInventory",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/inventory/delete/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"inventory",
+								"delete",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateInventory",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "teaid",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "InvQuantity",
+									"value": "333.3",
+									"type": "text"
+								},
+								{
+									"key": "InvAmount",
+									"value": "222.2",
+									"type": "text"
+								},
+								{
+									"key": "InvPrice",
+									"value": "111.11",
+									"type": "text"
+								},
+								{
+									"key": "InvDate",
+									"value": "2023-12-23",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/inventory/update/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"inventory",
+								"update",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Monitor",
+			"item": [
+				{
+					"name": "addMonitor",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "teaid",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "\"test\"",
+									"type": "text"
+								},
+								{
+									"key": "MonDate",
+									"value": "2023-10-11",
+									"type": "text"
+								},
+								{
+									"key": "MonAmount",
+									"value": "1929",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/monitor/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"monitor",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "QueryMonitor",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/monitor/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"monitor",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getMonitor",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/monitor/get/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"monitor",
+								"get",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateMonitor",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "teaid",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "\"test\"",
+									"type": "text"
+								},
+								{
+									"key": "MonDate",
+									"value": "2023-12-11",
+									"type": "text"
+								},
+								{
+									"key": "MonAmount",
+									"value": "12314",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/monitor/update/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"monitor",
+								"update",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteMonitor",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "teaid",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "\"test\"",
+									"type": "text"
+								},
+								{
+									"key": "MonDate",
+									"value": "2023-12-11",
+									"type": "text"
+								},
+								{
+									"key": "MonAmount",
+									"value": "12314",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/monitor/delete/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"monitor",
+								"delete",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Schedule",
+			"item": [
+				{
+					"name": "addSchedule",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "teaid",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "\"test\"",
+									"type": "text"
+								},
+								{
+									"key": "startDate",
+									"value": "2022-10-11",
+									"type": "text"
+								},
+								{
+									"key": "endDate",
+									"value": "2023-12-13",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/schedule/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"schedule",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getSchedule",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/schedule/get/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"schedule",
+								"get",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateSchedule",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "teaid",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "\"testeeee\"",
+									"type": "text"
+								},
+								{
+									"key": "startDate",
+									"value": "2022-10-11",
+									"type": "text"
+								},
+								{
+									"key": "endDate",
+									"value": "2323-10-10",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/schedule/update/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"schedule",
+								"update",
+								"2"
+							],
+							"query": [
+								{
+									"key": "teaid",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "status",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "QuerySchedule",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "teaid",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "\"testeeee\"",
+									"type": "text"
+								},
+								{
+									"key": "startDate",
+									"value": "2022-10-11",
+									"type": "text"
+								},
+								{
+									"key": "endDate",
+									"value": "2323-10-10",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/schedule/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"schedule",
+								"all"
+							],
+							"query": [
+								{
+									"key": "teaid",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "status",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteSchedule",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "teaid",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "\"testeeee\"",
+									"type": "text"
+								},
+								{
+									"key": "startDate",
+									"value": "2022-10-11",
+									"type": "text"
+								},
+								{
+									"key": "endDate",
+									"value": "2323-10-10",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/schedule/delete/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"schedule",
+								"delete",
+								"2"
+							],
+							"query": [
+								{
+									"key": "teaid",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "status",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

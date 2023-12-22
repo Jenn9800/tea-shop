@@ -46,7 +46,7 @@ public class OrderController {
 
     // Create a new order
     @PostMapping(path = "/add")
-    public @ResponseBody String createOrder(@RequestParam Long teaid, @RequestParam Integer customerid, @RequestParam @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss") Date odate, @RequestParam Integer oquantity, @RequestParam BigDecimal oamount ) {
+    public @ResponseBody String createOrder(@RequestParam Long teaid, @RequestParam Long customerid, @RequestParam @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss") Date odate, @RequestParam Integer oquantity, @RequestParam BigDecimal oamount ) {
     	Customer customer = customerRepository.findById(customerid)
     		    .orElseThrow(() -> new EntityNotFoundException("Customer not found"));
     	Tea tea = teaRepository.findById(teaid).orElseThrow(() -> new EntityNotFoundException("Tea not found"));
@@ -80,7 +80,10 @@ public class OrderController {
     public @ResponseBody ResponseEntity<?> deleteOrder(@PathVariable Long id) {
         Order order = orderRepository.findById(id)
                 .orElseThrow(() -> new EntityNotFoundException("Order not found with id " + id));
-
+        
+        order.setTea(null);
+        order.setCustomer(null);
+        orderRepository.save(order);
         orderRepository.delete(order);
 
         return ResponseEntity.ok().build();

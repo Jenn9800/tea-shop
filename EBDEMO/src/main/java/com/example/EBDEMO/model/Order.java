@@ -4,8 +4,8 @@ package com.example.EBDEMO.model;
 import jakarta.persistence.*;
 import java.math.BigDecimal;
 import java.util.Date;
+
 import com.example.EBDEMO.model.Customer;
-import com.example.EBDEMO.model.Tea;
 
 @Entity
 @Table(name = "Orders")

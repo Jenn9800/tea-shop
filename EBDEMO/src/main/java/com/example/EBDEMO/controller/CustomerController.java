@@ -1,18 +1,27 @@
 package com.example.EBDEMO.controller;
 
 
+import java.math.BigDecimal;
 import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.http.ResponseEntity;
+
 import com.example.EBDEMO.Repository.CustomerRepository;
 import com.example.EBDEMO.model.Customer;
+import com.example.EBDEMO.model.Tea;
+
+import jakarta.persistence.EntityNotFoundException;
 
 @Controller // This means that this class is a Controller
 @RequestMapping(path="/customer") // This means URL's start with /demo (after Application path)
@@ -40,5 +49,51 @@ public class CustomerController {
   public @ResponseBody Iterable<Customer> getAllUsers() {
     // This returns a JSON or XML with the users
     return customerRepository.findAll();
+  }
+  
+//Get an Customer by ID
+  @GetMapping("/get/{id}")
+  public @ResponseBody Customer getTeaById(@PathVariable("id") String id) {
+  	System.out.print(id);
+      return customerRepository.findById(Long.parseLong(id))
+              .orElseThrow(() -> new EntityNotFoundException("inventory not found with id " + id));
+  }
+  
+  
+// Update an existing Customer
+  @PutMapping("/update/{id}")
+  public @ResponseBody Customer updateInventory(@PathVariable Long id
+  		, @RequestParam String CName
+  		, @RequestParam String CPhoneNum
+  		, @RequestParam String CAddressme
+  		, @RequestParam @DateTimeFormat(pattern = "yyyy-MM-dd") Date LastPurchaseDate
+  		) {
+  	
+
+      Customer customer = customerRepository.findById(id)
+      		.orElseThrow(() -> new EntityNotFoundException("Tea not found with id " + id));
+      
+      
+      // Update the order attributes
+      customer.setAddress(CAddressme);
+      customer.setcName(CName);
+      customer.setcPhoneNum(CPhoneNum);
+      customer.setLastPurchaseDate(LastPurchaseDate);
+
+      return customerRepository.save(customer);
+  }
+  
+  
+  
+// Delete an Customer
+  @DeleteMapping("/delete/{id}")
+  public @ResponseBody ResponseEntity<?> deleteCustomer(@PathVariable Long id) {
+  	
+  	Customer customer = customerRepository.findById(id)
+      		.orElseThrow((() -> new EntityNotFoundException("Inventory not found with id " + id)));
+
+      customerRepository.delete(customer);
+
+      return ResponseEntity.ok().build();
   }
 }
