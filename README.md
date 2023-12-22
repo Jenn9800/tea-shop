@@ -19,7 +19,7 @@
 ---
 
 ## 後端編寫方法
-### 使用spring boot 和 thymeleaf框架
+### spring boot 和 thymeleaf
 1. spring boot是一個框架，在Controller中處理用戶的請求。
 2. 在com.example.EBDEMO.controller這個pacage中新增class，然後`import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;`，並且在class前加上`@Controller`，可以參考這個package中的其它controller。
