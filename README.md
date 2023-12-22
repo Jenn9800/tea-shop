@@ -1,4 +1,13 @@
 # tea-shop
+
+## 開始
+1. 先將github clone下來
+2. 打開eclipse，按最上面的幫助，然後按Eclipse Marketplace，接著搜尋Spring，安裝Spring Tool 4(aka Spring Tool Suite 4)。
+3. 用eclipse打開EBDEMO，然後可能要等它安裝套件（最右下角會顯示進度條）。
+4. 在src/main/java/com.example.EBDEMO中的是主程式，要run as spring boot app
+5. 有時候寫完code可能沒反應，這時要stop server，然後對著EBDEMO按右鍵，Maven -> Update project。
+
+
 ## Database API 使用方法
 
 透過 HTTP 請求方法（GET、PUT、DELETE、POST）來使用 API。
@@ -16,7 +25,7 @@
 
 - 確保您已安裝 Postman 應用程式或擴充功能。
 
----
+
 
 ## 後端編寫方法
 ### spring boot 和 thymeleaf
