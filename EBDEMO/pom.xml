@@ -46,6 +46,11 @@
         <artifactId>spring-boot-starter-data-jpa</artifactId>
     </dependency>
     
+    <dependency>
+	<groupId>org.springframework.boot</groupId>
+	<artifactId>spring-boot-starter-thymeleaf</artifactId>
+</dependency>
+    
 	</dependencies>
 
 	<build>
@@ -55,6 +60,23 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 		</plugins>
+		<resources>
+    <resource>
+      <!-- directory: 指定资源文件的位置 -->
+      <directory>src/main/java</directory>
+      <includes>
+        <!-- "**/*" 表示任意目录下的 "任意"文件 -->
+        <!-- mvn resources:resources ：对资源进行处理, 如编译后的.properties 文件 -->
+        <include>**/*.properties</include>
+        <include>**/*.xml</include>
+      </includes>
+      
+    </resource>
+    <resource>
+      <directory>src/main/resources</directory>
+    </resource>
+  </resources>
 	</build>
+
 
 </project>
