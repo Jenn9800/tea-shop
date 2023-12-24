@@ -21,6 +21,15 @@
 4. 導入後，您將看到一個包含 API 使用方法示範的表格。
 
 
+### http request方法
+- 把TABLE換成你要的表格名字
+- 把id換成你要的id
+1. 查詢某表格的所有資料: (GET) http://localhost:8080/TABLE/all 
+2. 查詣某表格的某特定資料: (GET) http://localhost:8080/TABLE/get/id
+3. 更新某表格的資料: (PUT) http://localhost:8080/TABLE/update/id
+4. 删除某資料: (DELETE) http://localhost:8080/TABLE/delete/id
+
+
 ### 註：
 
 - 確保您已安裝 Postman 應用程式或擴充功能。
