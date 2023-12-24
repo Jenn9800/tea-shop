@@ -24,10 +24,12 @@
 ### http request方法
 - 把TABLE換成你要的表格名字
 - 把id換成你要的id
+- 括號中的是request method
 1. 查詢某表格的所有資料: (GET) http://localhost:8080/TABLE/all 
 2. 查詣某表格的某特定資料: (GET) http://localhost:8080/TABLE/get/id
 3. 更新某表格的資料: (PUT) http://localhost:8080/TABLE/update/id
 4. 删除某資料: (DELETE) http://localhost:8080/TABLE/delete/id
+5. 新增資料: (POST) http://localhost:8080/TABLE/add
 
 
 ### 註：
