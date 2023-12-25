@@ -10,6 +10,7 @@
 
      <!-- add js for annualy, quartly, monthly bar graph -->
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript" th:src="@{/script.js}"></script>
 
     <title>嘉義茶農</title>
 </head>
@@ -408,6 +409,9 @@
             <input type="text" id="searchInput" placeholder="Search...">
             <button onclick="searchTable()">收尋</button>
         </div>
+        <!-- 新增按钮，触发数据加载 -->
+        <button onclick="loadCustomerData()">加載顧客資料</button>
+
     </div>
     <div class="box-container">
         <table>
@@ -423,38 +427,20 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>John Doe</td>
-                    <td>79</td>
-                    <td>Tainan</td>
-                    <td>12345678</td>
-                    <td>30</td>
-                    <td>$500</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Jane Smith</td>
-                    <td>94</td>
-                    <td>New Taipei City</td>
-                    <td>23456789</td>
-                    <td>15</td>
-                    <td>$750</td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>Alice Johnson</td>
-                    <td>72</td>
-                    <td>Taoyuan</td>
-                    <td>87654321</td>
-                    <td>45</td>
-                    <td>$600</td>
+                <tr th:each="customer : ${customers}">
+                    <td th:text="${customer.customerId}"></td>
+                    <td th:text="${customer.name}"></td>
+                    <td th:text="${customer.age}"></td>
+                    <td th:text="${customer.address}"></td>
+                    <td th:text="${customer.phoneNumber}"></td>
+                    <td th:text="${customer.lastPurchaseDate}"></td>
+                    <td th:text="${customer.clv}"></td>
                 </tr>
             </tbody>
         </table>
     </div>
 </section>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script type="text/javascript" src="script.js"></script>
+    
 </body>
 </html>

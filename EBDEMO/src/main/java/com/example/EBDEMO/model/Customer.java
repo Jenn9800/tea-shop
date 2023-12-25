@@ -10,6 +10,7 @@ import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
 
+import java.math.BigDecimal;
 import java.util.Date;
 
 @Entity
@@ -32,6 +33,14 @@ public class Customer {
     @Column(name = "LastPurchaseDate")
     @Temporal(TemporalType.DATE)
     private Date LastPurchaseDate;
+    
+    @Column(name = "CLV")
+    private BigDecimal CLV;
+    
+    @Column(name = "CAge")
+    private Long CAge;
+    
+    
 
     // Getters and Setters
     // ...
@@ -56,6 +65,14 @@ public class Customer {
 		this.LastPurchaseDate = lastPurchaseDate;
 	}
     
+    public void setCLV(BigDecimal cLV) {
+		CLV = cLV;
+	}
+    
+    public void setCAge(Long cAge) {
+		CAge = cAge;
+	}
+    
     public String getAddress() {
 		return Address;
 	}
@@ -71,4 +88,13 @@ public class Customer {
     public Date getLastPurchaseDate() {
 		return LastPurchaseDate;
 	}
+    
+    public BigDecimal getCLV() {
+		return CLV;
+	}
+    
+    public Long getCAge() {
+		return CAge;
+	}
+    
 }
