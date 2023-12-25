@@ -17,11 +17,8 @@
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript" th:src="@{/script.js}"></script>
 
-    <title>嘉義茶農 管理系統</title>
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.11.0/css/uikit.min.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.11.0/js/uikit.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.11.0/js/uikit-icons.min.js"></script></head>
+    <title>嘉義茶農</title>
+</head>
 
 <body>
     <!-- header section start -->
@@ -410,29 +407,18 @@
     <!-- sale analysis section end -->
 
 <!-- cust info section start -->
-<section class="uk-background-cover " id="cust-info">
+<section class="cust-info" id="cust-info">
     <div class="heading">
         <h1>顧客資料查詢</h1>
-        <!-- <div class="search-bar">
+        <div class="search-bar">
             <input type="text" id="searchInput" placeholder="Search...">
             <button onclick="searchTable()">收尋</button>
-            <form class="uk-search uk-search-default">
-                <a href="" uk-search-icon></a>
-                <input class="uk-search-input" type="search" placeholder="" aria-label="">
-            </form>
-            新增按钮，触发数据加载
-            <button onclick="loadCustomerData()" class="uk-button uk-button-primary">加載顧客資料</button>
-        </div> -->
-        <div class="uk-margin">
-            <form class="uk-search uk-search-default">
-                <a href="" class="uk-search-icon-flip" uk-search-icon></a>
-                <input class="uk-search-input" type="search" placeholder="Search" aria-label="Search">
-            </form>
         </div>
-        <button onclick="loadCustomerData()"  class="uk-button uk-button-default">加載顧客資料</button>
+        <!-- 新增按钮，触发数据加载 -->
+        <button onclick="loadCustomerData()">加載顧客資料</button>
 
     </div>
-    <div class="box-container ">
+    <div class="box-container">
         <table>
             <thead>
                 <tr>
@@ -458,14 +444,8 @@
             </tbody>
         </table>
     </div>
-    <hr class="uk-divider-icon">
 </section>
-
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     
 </body>
-<footer class="">
-    <p class="uk-text-small uk-text-muted">嘉義茶農 管理系統</p>
-
-</footer>
 </html>
