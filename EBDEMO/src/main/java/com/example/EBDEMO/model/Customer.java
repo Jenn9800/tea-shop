@@ -41,6 +41,20 @@ public class Customer {
     private Long CAge;
     
     
+    //toString
+    @Override
+    public String toString() {
+        return "Customer{" +
+                "name='" + CName + '\'' +
+                ", address='" + Address + '\'' +
+                ", phoneNum='" + CPhoneNum + '\'' +
+                ", lastPurchaseDate=" + LastPurchaseDate +
+                ", clv=" + CLV +
+                ", age=" + CAge +
+                // 其他属性的字符串表示...
+                '}';
+    }
+    
 
     // Getters and Setters
     // ...

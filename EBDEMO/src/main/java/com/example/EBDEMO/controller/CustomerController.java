@@ -69,7 +69,15 @@ public class CustomerController {
   @GetMapping(path="/all")
   public @ResponseBody Iterable<Customer> getAllUsers() {
     // This returns a JSON or XML with the users
-    return customerRepository.findAll();
+	// This returns a JSON or XML with the users
+	    Iterable<Customer> customers = customerRepository.findAll();
+
+	    // 打印所有客户信息到控制台
+	    for (Customer customer : customers) {
+	        System.out.println(customer.getAddress().toString());
+	    }
+//    return customerRepository.findAll();
+	    return customers;
   }
   
 //Get an Customer by ID
