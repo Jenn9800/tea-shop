@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.example.EBDEMO.Repository.CustomerRepository; //import CustomerRepository
 import com.example.EBDEMO.model.Customer; //import Customer
 
-public class test {
+public class Test {
 	
 	private CustomerRepository customerRepository; //instantiate
 	
@@ -23,5 +23,7 @@ public class test {
 //	    return customerRepository.findAll();
 		    return customers;
 	  }
+	  
+	  
 
 }
