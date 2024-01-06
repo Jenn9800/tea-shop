@@ -60,57 +60,55 @@
     </div>
     <!-- home section end -->
    
-    <!-- inventory section -->
-    <div class="inventory" id="inventory">
-        <div class="heading">
-            <h1>庫存管理</h1>
-        </div>
+<!-- inventory section -->
+<div class="inventory" id="inventory">
+    <div class="heading">
+        <h1>庫存管理</h1>
+    </div>
 
-        <table>
-            <thead>
-                <tr>
-                    <th>圖片</th>
-                    <th>ID</th>
-                    <th>茶種</th>
-                    <th>庫存量</th>
-                    <th>零售價</th>
-                    <th>批發價</th>
-                    <th>編輯</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><img class="image" th:src="@{images/ulong.jpg}" alt=""></td>
-                    <td>1</td>
-                    <td>青心烏龍茶</td>
-                    <td>50000 包</td>
-                    <td>＄50</td>
-                    <td>＄30</td>
-                    <td><a href="https://www.example.com"><img class="editIcon" th:src="@{images/edit.jpg}"></a></td>
-                </tr>
-                <tr>
-                    <td><img class="image" th:src="@{images/tea2.jpg}" alt=""></td>
-                    <td>2</td>
-                    <td>文山包種茶</td>
-                    <td>43000 包</td>
-                    <td>＄70</td>
-                    <td>＄45</td>
-                    <td><a href="https://www.example.com"><img class="editIcon" th:src="@{images/edit.jpg}"></a></td>
-                </tr>
-                <tr>
-                    <td><img class="image" th:src="@{images/tea3.jpg}" alt=""></td>
-                    <td>3</td>
-                    <td>東方美人茶</td>
-                    <td>1000 包</td>
-                    <td>＄60</td>
-                    <td>＄20</td>
-                    <td><a href="https://www.example.com"><img class="editIcon" th:src="@{images/edit.jpg}"></a></td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-    </div>
-    <!-- inventory section end -->
+    <table>
+        <thead>
+            <tr>
+                <th>圖片</th>
+                <th>ID</th>
+                <th>茶種</th>
+                <th>庫存量</th>
+                <th>零售價</th>
+                <th>總庫存價值</th>
+                <th>編輯</th>
+            </tr>
+        </thead>
+        <tbody th:each="inventory, iterStat : ${inventories}">
+            <tr >
+                <!-- Existing Inventory Row -->
+                <td><img class="image" th:src="@{'/images/' + ${inventory?.tea?.teaID} + '.jpg'}" alt="Tea Image"></td>
+                <td th:text="${inventory.tea.teaID}"></td>
+                <td th:text="${inventory.tea.teaName}"></td>
+                <td th:text="${inventory.invQuantity}"></td>
+                <td th:text="'＄' + ${inventory.invretailPrice}"></td>
+                <td th:text="'＄' + ${inventory.totalInvValue}"></td>
+                <td><button type="button" th:onclick="'showEditForm(' + ${iterStat.index} + ')'">編輯</button></td>
+            </tr>
+        
+            <!-- Hidden Edit Form Row -->
+            <tr th:id="'editForm-' + ${iterStat.index}" style="display:none;" th:if="${inventories}">
+                <td colspan="7">
+                    <form th:action="@{/inventory/update/{id}(id=${inventory?.tea?.teaID})}" th:method="post">
+                        <input type="number" name="invQuantity" placeholder="庫存量" required/>
+                        <input type="number" name="invretailPrice" placeholder="零售價" required/>
+                        <button type="submit">完成</button>
+                        <button type="button" th:onclick="'hideEditForm(' + ${iterStat.index} + ')'">放棄變更</button>
+                    </form>
+                </td>
+            </tr>
+        </tbody>
+        
+        
+    </table>
+</div>
+<!-- inventory section end -->
+
+
 
     <!-- schedule section start -->
     <section class="schedule" id="schedule">

@@ -222,3 +222,11 @@ function loadCustomerData() {
     })
     .catch((error) => console.error("Error:", error));
 }
+
+function showEditForm(index) {
+  document.getElementById("editForm-" + index).style.display = "";
+}
+
+function hideEditForm(index) {
+  document.getElementById("editForm-" + index).style.display = "none";
+}
